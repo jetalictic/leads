@@ -32,57 +32,11 @@
       </style>
    </head>
    <body id="page-top">
-      <nav class="navbar navbar-expand navbar-dark bg-blue static-top">
-         <a class="navbar-brand mr-1" href="index.php">LEADS</a>
-         <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-         <i class="fas fa-bars"></i>
-         </button>
-         <!-- Navbar Search -->
-         <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-            <div class="input-group">
-            </div>
-            </div>
-         </form>
-         <!-- Navbar -->
-         <ul class="navbar-nav ml-auto ml-md-0">
-            <li class="nav-item dropdown no-arrow" style="color:white;top:7px;">
-            </li>
-            <li class="nav-item dropdown no-arrow">
-               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               <i class="fa fa-power-off" style="color:#97CB18;"></i>
-               </a>
-               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
-               </div>
-            </li>
-         </ul>
-      </nav>
+      @include('layouts.nav')
       <div id="wrapper">
          <!-- Sidebar -->
-         <ul class="sidebar navbar-nav">
-            <li class="nav-item active">
-               <a class="nav-link" href="index.php">
-               <i class="fas fa-fw fa-table"></i>
-               <span>Leads</span></a>
-            </li>
-            <li class='nav-item'>
-               <a class='nav-link' href='send.php'>
-               <i class='fas fa-fw fa-user'></i>
-               <span>Send CSV</span></a>
-            </li>
-            <li class='nav-item'>
-               <a class='nav-link' href='upload.php'>
-               <i class='fas fa-fw fa-upload'></i>
-               <span id='upload_csv'>Upload CSV</span></a>
-            </li>
-            <li class='nav-item'>
-               <a class='nav-link' href='add-user.php'>
-               <i class='fas fa-fw fa-user'></i>
-               <span>Add User</span></a>
-            </li>
-         </ul>
-         <div id="content-wrapper">
+         @include('layouts.sidebar')
+         <div id="content-wrapper" style="padding:10px;">
             <div class="container-fluid">
                <!-- Breadcrumbs-->
                <ol class="breadcrumb">
@@ -91,7 +45,7 @@
                   </li>
                   <li class="breadcrumb-item active">Overview</li>
                </ol>
-               <script type='text/javascript' src='script/script.js'></script>  
+               {{ Html::script('js/script.js') }}
                <style>
                   .dataTables_length {
                   margin-top:20px;
